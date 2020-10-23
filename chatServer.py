@@ -25,7 +25,7 @@ def getMessages(id,message):
 
 
 def chatServer():
-  fifoname="RTCChat" # unique name for fifos
+  fifoname="team1Chat" # unique name for fifos
   sendFifoFile = "/home/fifo/"+fifoname+"_sendFifo"
   getFifoFile = "/home/fifo/"+fifoname+"_getFifo"
 
