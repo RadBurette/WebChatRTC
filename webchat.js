@@ -16,6 +16,7 @@ $(document).ready(function () {
       }
     });
 
+    setInterval(function(){ checkMessage(); }, 1000);
 
     id=makeid(10);
     console.log("ID:",id);
@@ -41,15 +42,13 @@ function updateScroll(){
 
  // Respond to send button
 function sendText() {
+
   console.log("sendText");
   // Get the text from the text box
   inText = $('#textinput').val();
   // Clear the input text
   $('#textinput').val("");
-
-  //document.getElementById('chatBox').innerHTML += "<font color='red'>You: </font>" + inText+"<br />";
-  // force to bottom
-  updateScroll();
+  inputFlag=0;
 
   message=inText.replace("","+");
   $.ajax(
@@ -65,8 +64,30 @@ function sendText() {
   });
 }
 
+// Respond to send button
+function checkMessage() {
+
+ inText = ""; //start inText as empty
+
+ message=inText.replace("","+");
+ $.ajax(
+   {
+   type: "get",
+   url: "/cgi-bin/team1_webchat.py?message=" + message + "&id="+id,
+   dataType: "text",
+   success:  processResults,
+   error: function(request, ajaxOptions, thrownError)
+   {
+       $("#debug").text("error with get:"+request+thrownError);
+   }
+ });
+}
+
 function processResults(data) {
   // add to the bottom of the chat box
-  console.log("got:"+data);
-  $('#chatBox').append(data);
+  if(data.length > 1){
+    updateScroll();
+    console.log("got:"+data);
+    $('#chatBox').append(data);
+  }
 }
