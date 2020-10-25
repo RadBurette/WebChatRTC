@@ -21,7 +21,7 @@ def getMessages(id,message):
     for key in keys:
         if key!=id:
             if len(message) > 1: # only if message is longer than 1
-                messages[key]+=message+"\n"
+                messages[key]+=id+":"+message+"\n"
     return result
 
 

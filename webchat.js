@@ -1,4 +1,6 @@
 var id;
+var inchat=true;
+
 
 $(document).ready(function () {
     $('#sendText').click(sendText);
@@ -23,6 +25,19 @@ $(document).ready(function () {
 
 });
 
+
+function makeid(length) {
+
+   var result = "";
+   while (result===""){
+     result = prompt("Please Enter Your username","Michael Jordan");
+   }
+
+
+   return result;
+
+}
+/*
 function makeid(length) {
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -32,7 +47,7 @@ function makeid(length) {
    }
    return result;
 }
-
+*/
 // Function to force scrollable window at bottom
 function updateScroll(){
     var element = document.getElementById("chatBox");
@@ -42,7 +57,7 @@ function updateScroll(){
 
  // Respond to send button
 function sendText() {
-
+  if (inchat===true){
   console.log("sendText");
   // Get the text from the text box
   inText = $('#textinput').val();
@@ -63,10 +78,10 @@ function sendText() {
     }
   });
 }
-
+}
 // Respond to send button
 function checkMessage() {
-
+ if (inchat===true){
  inText = ""; //start inText as empty
 
  message=inText.replace("","+");
@@ -82,7 +97,7 @@ function checkMessage() {
    }
  });
 }
-
+}
 function processResults(data) {
   // add to the bottom of the chat box
   if(data.length > 1){
@@ -90,4 +105,9 @@ function processResults(data) {
     console.log("got:"+data);
     $('#chatBox').append(data);
   }
+}
+
+function leavechat(){
+  inchat=false;
+
 }
