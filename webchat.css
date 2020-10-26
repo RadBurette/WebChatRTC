@@ -1,26 +1,74 @@
-/* Some styles for text */
-h2, h3, p {
-    font-family: Verdana, sans-serif;
-}
 
+header {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace, lucidia-console;
+  text-align: center;
+  margin: auto;
+  width: 400px;
+
+}
 .small {
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     font-size: 60%;
 }
+.input-send-box {
+  width:500px;
+  height: 50px;
+  display: inline-block;
+  align-self: center;
+  font-size: 15px;
+  margin: 0;
+  border: 3px;
 
-/* Text Box attributes */
-.textinput {
-    width: 400px;
-    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
-    font-size: 82%;
+}
+.check-leave-box {
+  width: 400px;
+  height: 50px;
+  display: inline-flex;
+  align-self: center;
+  font-size: 15px;
+  margin: 0;
+}
+#sendText
+{
+  width: 400px;
+  height: 50px;
+  font-family: monospace, lucidia-console;
 }
 
+#leavebutton
+{
+  width: 400px;
+  height: 50px;
+  font-family: monospace, lucidia-console;
+}
+/* Text Box attributes */
+#textinput {
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: left;
+    padding: 0;
+    margin: auto;
+    width: 396px;
+    height: 50px;
+
+}
+.jumbotron {
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+
+}
 /* Scroll Box attributes */
 .scrollabletextbox {
-	background-color: #e6b3ff;
+	background-color: #F0F0F0;
+  border: 5px solid red;
     height: 300px;
-    width: 400px;
+    width: 400mpx;
+    justify-content: center;
     font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
     font-size: 82%;
     overflow:scroll;
+    align-self: center;
 }
