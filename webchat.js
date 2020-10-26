@@ -4,7 +4,6 @@ var inchat=true;
 
 $(document).ready(function () {
     $('#sendText').click(sendText);
-    $('#checkText').click(sendText);
 
     var input = document.getElementById("textinput");
     // Respond to enter key
@@ -109,5 +108,6 @@ function processResults(data) {
 
 function leavechat(){
   inchat=false;
+  document.getElementById("chatBox").innerHTML = ""; //removes old chat when you "leave"
 
 }
